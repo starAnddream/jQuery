@@ -1,0 +1,56 @@
+<script>
+/*var apple={
+iphone:function(){
+return this.x;
+},
+x:7
+}
+//4,6,7,9,10,11,12,15,17
+console.log(typeof(app=apple.iphone)());*//*
+function add(a){
+return a + '010';
+}
+console.log(add(020));*//*
+var obj={m:10};
+var obj2=obj;
+obj.a=obj2={n:20};
+alert(obj.a);
+alert(obj.m);*//*
+function sub(a){
+return a-'010';
+}
+console.log(sub(020));*//*
+var res=typeof(null);
+if(res === "object"){
+res=0;
+}
+else if(res==="object"){
+res=1;
+}
+else{
+res=2;
+}
+console.log(res);*/
+Object.prototype.execArr=function(){
+var array=this;
+//console.log(this);
+var n={},r=[],len=array.length,val,type;
+for(var i=0;i<array.length;i++){
+val=array[i];
+type=typeof val;
+console.log([type]);
+if(!n[val]){
+n[val]=[type];
+r.push(val);
+//console.log(r);
+}else if(n[val].indexOf(type)<0){
+n[val].push(type);
+//console.log(n+"222");
+r.push(val);
+}
+}
+return r;
+}
+var obj=[1,5,4,4,5,6,9,3,3,2];
+console.log(obj.execArr());
+</script>
