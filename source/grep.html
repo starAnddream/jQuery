@@ -1,0 +1,28 @@
+<script src="../jquery.js"></script>
+<script>
+$.grep=function( elems, callback, inv ) {
+  var retVal,
+    ret = [],
+    i = 0,
+    length = elems.length;
+  inv = !!inv;//转成布尔型
+
+  // Go through the array, only saving the items
+  // that pass the validator function
+  //console.log(inv);
+  for ( ; i < length; i++ ) {
+    retVal = !!callback( elems[i], i );//注意这里的callback参数是先value,后key
+    if ( inv !== retVal ) {
+      ret.push( elems[ i ] );
+    }
+  }
+
+  return ret;
+}
+var arr=[1,2,3,4];
+var new_arr=$.grep(arr,filter);
+function filter(n){
+	return n>2;
+}
+console.log(new_arr);
+</script>

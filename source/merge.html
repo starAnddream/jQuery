@@ -1,0 +1,32 @@
+<script src="../jquery.js"></script>
+<script>
+$.merge=function( first, second ) {
+  //难道first 跟second参数必须为数组？
+  var l = second.length,
+    i = first.length,
+    j = 0;
+
+  //从这个判断来看，second可以是一个对象
+  if ( typeof l === "number" ) {//如果second是数组
+    for ( ; j < l; j++ ) {
+      first[ i++ ] = second[ j ];
+    }
+  } else {//如果second不是数组
+    //假设second = {}; second[0] = 1; second[1] = 2; second[2] = 3;
+    //那这里的逻辑也是可以成立的
+    while ( second[j] !== undefined ) {
+      first[ i++ ] = second[ j++ ];
+	  
+    }
+  }
+
+  first.length = i;
+
+  return first;
+}
+var arr1=[1,2,3,4];
+var arr2=["li","zhi","guo"];
+var arr3=["baidu","tencent"];
+var new_arr=$.merge(arr1,arr2,arr3);
+console.log(new_arr);
+</script>
