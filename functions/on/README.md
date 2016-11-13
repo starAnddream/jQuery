@@ -17,7 +17,7 @@ $(document).ready(function(){
   });
 });
 ````
-绑定自定义事件
+* 绑定自定义事件
 ```javascript
 $(document).ready(function(){
   $("p").on("myOwnEvent", function(event, showName){
@@ -39,7 +39,7 @@ $(document).ready(function(){
   $("p").on("click", {msg: "You just clicked me!"}, handlerName)
 });
 ````
-适用于未创建的元素
+* 适用于未创建的元素
 ```javascript
 $(document).ready(function(){
   $("div").on("click","p",function(){
